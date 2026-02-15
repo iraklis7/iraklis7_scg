@@ -3,6 +3,8 @@
 ## Description
 The Specification Compliance Generator uses the GitHub CoPilot Python SDK to identify the delta between two hardware specifications versions of the same technology and produce a detailed report that may be used to further guide the RTL and Verification efforts.
 
+The UART IP Core Specification from OpenCores is used in this project, slightly modifed in order to produce a clear delta for demonstration.
+
 ## Project Organization
 
 ```
