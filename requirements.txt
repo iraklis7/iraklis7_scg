@@ -3,5 +3,4 @@ dotenv
 datetime
 logging
 asyncio
-pytest-asyncio
 github-copilot-sdk
