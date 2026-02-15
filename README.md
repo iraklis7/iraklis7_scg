@@ -41,6 +41,6 @@ The UART IP Core Specification from OpenCores is used in this project, slightly 
 --------
 
 ## Installation 
-The project may be downladed though PyPi, using the following commands:
-pip install iraklis7_scg
+The project may be downladed though PyPi, using the following commands:\
+pip install iraklis7_scg\
 pip install -r requirements.txt

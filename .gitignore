@@ -7,6 +7,7 @@
 /replies
 /prompts
 /uart16550-rel_4
+/specs/*.txt
 
 # Directories not project related
 /bin

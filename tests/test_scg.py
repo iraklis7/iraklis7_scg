@@ -1,5 +1,4 @@
 import asyncio
-#from pyexpat import model
 import pytest
 from copilot.types import FileAttachment
 from iraklis7_scg.scg import SCG
@@ -28,4 +27,4 @@ async def test_scg():
         # Stop the client
         await scg.client_stop()
 
-asyncio.run(test_scg())
+#asyncio.run(test_scg())

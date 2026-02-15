@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "iraklis7_scg"
-version = "0.0.1"
+version = "0.0.2"
 description = "The Specification Compliance Generator will identify the delta between two hardware specifications versions of the same technology and produce a detailed report that may be used to guide further RTL and Verification efforts"
 authors = [
   { name = "Iraklis Diamantidis" },
