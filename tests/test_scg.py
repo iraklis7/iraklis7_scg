@@ -1,8 +1,9 @@
 import asyncio
 import pytest
 from copilot.types import FileAttachment
-from iraklis7_scg.scg import SCG
 import iraklis7_scg.config as config
+from iraklis7_scg.scg import SCG
+
 
 @pytest.mark.asyncio
 async def test_scg():

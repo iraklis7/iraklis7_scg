@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
 
     environment:
-      name: testpypi
+      name: 'testpypi'
       url: https://test.pypi.org/p/iraklis7_scg
 
     permissions:
