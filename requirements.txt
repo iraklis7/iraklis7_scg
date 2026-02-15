@@ -1,0 +1,6 @@
+pathlib
+dotenv
+datetime
+logging
+asyncio
+github-copilot-sdk
