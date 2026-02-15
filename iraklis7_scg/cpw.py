@@ -1,7 +1,9 @@
 import asyncio
 from datetime import datetime
+
 from copilot import CopilotClient, CopilotSession
 from copilot.generated.session_events import SessionEventType
+
 import iraklis7_scg.config as config
 
 
@@ -40,19 +42,13 @@ class CPW(object):
             elif event.type == SessionEventType.TOOL_EXECUTION_COMPLETE:
                 if event.data.result:
                     config.logger.debug(f"Content: {event.data.result.content}")
-                    config.logger.debug(
-                        f"Detailed Content: {event.data.result.detailed_content}"
-                    )
+                    config.logger.debug(f"Detailed Content: {event.data.result.detailed_content}")
                 if event.data.error:
                     config.logger.debug(f"Message: {event.data.error.message}")
                 config.logger.debug(f"Success: {event.data.success}")
             elif event.type == SessionEventType.ASSISTANT_USAGE:
-                config.logger.debug(
-                    f"Cache Read Tokens: {event.data.cache_read_tokens}"
-                )
-                config.logger.debug(
-                    f"Cache Write Tokens: {event.data.cache_write_tokens}"
-                )
+                config.logger.debug(f"Cache Read Tokens: {event.data.cache_read_tokens}")
+                config.logger.debug(f"Cache Write Tokens: {event.data.cache_write_tokens}")
                 config.logger.debug(f"Cost: {event.data.cost}")
                 config.logger.debug(f"Duration: {event.data.duration}")
                 config.logger.debug(f"Input Tokens: {event.data.input_tokens}")
@@ -117,21 +113,16 @@ class CPW(object):
             config.logger.error(f"Error: {e}")
             raise
 
-    async def client_send(
-        self, streaming, options, timeout
-    ):  # -> Optional[SessionEvent]:
+    async def client_send(self, streaming, options, timeout):  # -> Optional[SessionEvent]:
         # Create a session and send the prompt and specifications
         try:
-            config.logger.info(
-                f"Comparing latest spec {config.LATEST_SPEC}\
-                to {config.CURRENT_SPEC}"
-            )
+            config.logger.info(f"Comparing latest spec {config.LATEST_SPEC}\
+                to {config.CURRENT_SPEC}")
             if streaming:
                 result = await self.__session.send(options)
                 await self.__done.wait()
             else:
-                response = await self.__session.send_and_wait(options,
-                                                              timeout=timeout)
+                response = await self.__session.send_and_wait(options, timeout=timeout)
                 if response:
                     result = response.data.content
         except Exception as e:

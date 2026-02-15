@@ -1,5 +1,6 @@
 from copilot import SessionConfig
-from copilot.types import SessionConfig, SystemMessageAppendConfig, MessageOptions
+from copilot.types import MessageOptions, SessionConfig, SystemMessageAppendConfig
+
 import iraklis7_scg.config as config
 from iraklis7_scg.cpw import CPW
 
@@ -8,23 +9,23 @@ class SCG(CPW):
     def __init__(self):
         super().__init__()
         self.__dict = self.__create_dict()
-    
+
     async def create_report(self, model, streaming, attachments):
-        action = 'scg_delta_report'
+        action = "scg_delta_report"
         timeout = 600.0
         user = self.get_user_message(action)
         prompt = self.get_prompt(action)
         sys_mes = SystemMessageAppendConfig(mode="append", content=user)
         try:
-            await self.create_session(SessionConfig(model=model, 
-                                        system_message=sys_mes, 
-                                        streaming=streaming))
+            await self.create_session(
+                SessionConfig(model=model, system_message=sys_mes, streaming=streaming)
+            )
 
-            response = await self.client_send(streaming, 
-                        MessageOptions(prompt=prompt, 
-                                       attachments=attachments,  
-                                       mode="immediate"), 
-                        timeout)
+            response = await self.client_send(
+                streaming,
+                MessageOptions(prompt=prompt, attachments=attachments, mode="immediate"),
+                timeout,
+            )
         except Exception as e:
             config.logger.error(f"Error: {e}")
         finally:
