@@ -4,3 +4,4 @@ datetime
 logging
 asyncio
 github-copilot-sdk
+-e .
