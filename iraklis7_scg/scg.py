@@ -12,7 +12,7 @@ class SCG(CPW):
 
     async def create_report(self, model, streaming, attachments):
         action = "scg_delta_report"
-        timeout = 600.0
+        timeout = 300.0
         user = self.get_user_message(action)
         prompt = self.get_prompt(action)
         sys_mes = SystemMessageAppendConfig(mode="append", content=user)

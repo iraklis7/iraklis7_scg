@@ -45,3 +45,5 @@ jobs:
         # Copilot's binary is not executable by default, so we need to set the permissions
         chmod 755 $LD_LIBRARY_PATH/python3.10/site-packages/copilot/bin/copilot
         pytest -vv -s
+      env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
