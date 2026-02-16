@@ -41,4 +41,6 @@ jobs:
         echo "PYTHONPATH=/home/runner/work/iraklis7_scg" >> $GITHUB_ENV
     - name: Test with pytest
       run: |
+        # Copilot's binary is not executable by default, so we need to set the permissions
+        chmod 755 $LD_LIBRARY_PATH/python3.10/site-packages/copilot/bin/copilot
         pytest -vv -s
