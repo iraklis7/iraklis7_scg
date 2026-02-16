@@ -28,6 +28,7 @@ class SCG(CPW):
             )
         except Exception as e:
             config.logger.error(f"Error: {e}")
+            raise
         finally:
             # Destroy the session
             await self.session_destroy()

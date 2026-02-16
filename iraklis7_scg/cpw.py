@@ -89,7 +89,7 @@ class CPW(object):
             response = await self.__client.ping("health check")
             test = response.timestamp / 1000.0
             formatted = datetime.fromtimestamp(test).strftime("%F %T.%f")[:-3]
-            config.logger.debug(f"Server responded at {formatted}")
+            config.logger.info(f"Server responded at {formatted}")
         except Exception as e:
             config.logger.error(f"Error pinging server: {e}")
             raise
@@ -124,10 +124,10 @@ class CPW(object):
             else:
                 response = await self.__session.send_and_wait(options, timeout=timeout)
                 if response:
-                    result = response.data.content
+                    return response.data.content
         except Exception as e:
             config.logger.error(f"Error: {e}")
-        return result
+            raise
 
     async def session_destroy(self):
         try:
