@@ -12,7 +12,14 @@
 /specs/*.doc
 /specs/*.docx
 /specs/*.pages
-/uvm_tb
+/uvm_tb/obj_dir*
+/uvm_tb/*.cmd
+/uvm_tb/out
+/uvm_tb/*.gold
+/uvm_tb/*.md
+/uvm_tb/Makefile
+/uvm_tb/*.sh
+
 /uvm_lib
 /uvm_tb.latest
 /uvm_tb.orig
