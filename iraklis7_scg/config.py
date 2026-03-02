@@ -28,6 +28,9 @@ logger.info(f"PROJ_ROOT path is: {PROJ_ROOT}")
 
 # Setup directories
 SPECS_DIR = PROJ_ROOT / "specs"
-CURRENT_SPEC = SPECS_DIR / "UART_current.pdf"
-LATEST_SPEC = SPECS_DIR / "UART_latest.pdf"
+IP_DIR = PROJ_ROOT / "ip"
+UART_DIR = PROJ_ROOT / "uart16550"
+UART_DOCS_DIR = UART_DIR / "doc"
+CURRENT_SPEC = UART_DOCS_DIR / "UART_spec.pdf"
+LATEST_SPEC = SPECS_DIR / "UART_v0.7.pdf"
 REPORT_DIR = PROJ_ROOT / "reports"

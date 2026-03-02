@@ -116,8 +116,6 @@ class CPW(object):
     async def client_send(self, streaming, options, timeout):  # -> Optional[SessionEvent]:
         # Create a session and send the prompt and specifications
         try:
-            config.logger.info(f"Comparing latest spec {config.LATEST_SPEC}\
-                to {config.CURRENT_SPEC}")
             if streaming:
                 result = await self.__session.send(options)
                 await self.__done.wait()

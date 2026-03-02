@@ -7,7 +7,16 @@
 /replies
 /prompts
 /uart16550-rel_4
+/uart16550-rel_4.old
 /specs/*.txt
+/specs/*.doc
+/specs/*.docx
+/specs/*.pages
+/uvm_tb
+/uvm_lib
+/uvm_tb.latest
+/uvm_tb.orig
+/uvm_tb.v2
 
 # Directories not project related
 /bin
@@ -206,3 +215,4 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+tests/test_scg old.py
